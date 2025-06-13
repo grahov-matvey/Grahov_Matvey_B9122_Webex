@@ -47,7 +47,7 @@
     $link = mysqli_connect('db', 'root', 'kali', 'first');
     
     if (isset($_COOKIE['User'])) {
-        header("Location: profile.php");
+        header("Location: index.php");
     }
 
     if (isset($_POST['submit'])) {
@@ -62,7 +62,7 @@
 
         if (mysqli_num_rows($result) == 1) {
             setcookie("User", $username, time()+7200);
-            header('Location: profile.php');
+            header('Location: index.php');
           } else {
             echo "Неправильное имя или пароль";
           }
